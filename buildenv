@@ -1,6 +1,7 @@
-export ZOPEN_GIT_URL="https://github.com/Distrotech/libpipeline.git"
-export ZOPEN_GIT_DEPS="git make curl"
-export ZOPEN_TYPE="GIT"
+export ZOPEN_TARBALL_URL="https://download.savannah.nongnu.org/releases/libpipeline/libpipeline-1.5.6.tar.gz"
+export ZOPEN_TARBALL_DEPS="git make curl"
+export ZOPEN_TYPE="TARBALL"
+export ZOPEN_BOOTSTRAP="skip"
 
 zopen_check_results()
 {
