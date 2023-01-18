@@ -7,18 +7,30 @@ INC=$LIBPIPELINE_HOME
 #LIBPIPELINE_HOME=$HOME/zopen/prod/libpipeline
 #LIB=$LIBPIPELINE_HOME/lib
 #INC=$LIBPIPELINE_HOME/include
-CC=xlclang
+
+if ! groff --version >/dev/null 2>&1 ; then
+  cd "${HOME}/zopen/prod/groff"
+  . ./.env
+  cd "${OLDPWD}"
+fi
+if ! zsoelim --version >/dev/null 2>&1 ; then
+  cd "${HOME}/zopen/prod/man"
+  . ./.env
+  cd "${OLDPWD}"
+fi
+
+CC=xlclang++
 CFLAGS='-qascii'
 
 cd "${mydir}"
 rm -f chkpipe chkpipe.o
 
-if ! ${CC} ${CFLAGS} -I$INC -L$LIB -ochkpipe chkpipe.c -lpipeline ; then
+if ! ${CC} ${CFLAGS} -I$INC -L$LIB -L$HOME/zopen/prod/zoslib/lib -ochkpipe chkpipe.c -lpipeline -lzoslib ; then
   echo "Unable to build basic version test for libpipeline" >&2
   exit 8
 fi
 
-if ! ./chkpipe ; then
+if ! ./chkpipe >/dev/null ; then
   echo "Unable to run basic version test for libpipeline" >&2
   rc=8
 else
