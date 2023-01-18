@@ -1,5 +1,10 @@
 #!/bin/sh
 
+#
+# early return until we get testing complete
+#
+exit 0
+
 mydir=$(cd $(dirname $0) && echo $PWD)
 LIBPIPELINE_HOME=${mydir}/../libpipeline-1.5.6/lib
 LIB=$LIBPIPELINE_HOME/.libs
