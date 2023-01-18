@@ -30,7 +30,7 @@ if ! ${CC} ${CFLAGS} -I$INC -L$LIB -L$HOME/zopen/prod/zoslib/lib -ochkpipe chkpi
   exit 8
 fi
 
-if ! ./chkpipe >/dev/null ; then
+if ! ./chkpipe ; then
   echo "Unable to run basic version test for libpipeline" >&2
   rc=8
 else
