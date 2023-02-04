@@ -5,7 +5,6 @@ export ZOPEN_BOOTSTRAP="skip"
 
 export ZOPEN_CHECK="../tests/chkpipe.sh"
 
-
 zopen_append_to_env()
 {
 cat <<ZZ
