@@ -3,6 +3,7 @@ export ZOPEN_TARBALL_DEPS="git make curl zoslib"
 export ZOPEN_TYPE="TARBALL"
 export ZOPEN_BOOTSTRAP="skip"
 
+
 export ZOPEN_CHECK="../tests/chkpipe.sh"
 
 zopen_append_to_env()
