@@ -1,5 +1,4 @@
 #!/bin/sh
-
 mydir=$(cd $(dirname $0) && echo $PWD)
 LIBPIPELINE_HOME=${mydir}/../libpipeline-1.5.6/lib
 LIB=$LIBPIPELINE_HOME/.libs
@@ -16,6 +15,7 @@ fi
 if ! zsoelim --version >/dev/null 2>&1 ; then
   cd "${HOME}/zopen/prod/man"
   . ./.env
+  export PATH=$PWD/libexec/man-db:$PATH
   cd "${OLDPWD}"
 fi
 
