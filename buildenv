@@ -38,6 +38,10 @@ ZZ
 
 }
 
+zopen_post_install()
+{
+   cd "$1/lib" && ar -d libpipeline.a libgnu_la-reallocarray.o
+}
 zopen_get_version()
 {
   echo ${VER}
