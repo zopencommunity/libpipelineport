@@ -1,0 +1,15 @@
+diff --git a/configure b/configure
+index f983402..b52b148 100755
+--- a/configure
++++ b/configure
+@@ -10565,6 +10565,10 @@ openbsd* | bitrig*)
+   fi
+   ;;
+ 
++openedition)
++  lt_cv_deplibs_check_method=pass_all
++  ;;
++
+ osf3* | osf4* | osf5*)
+   lt_cv_deplibs_check_method=pass_all
+   ;;
