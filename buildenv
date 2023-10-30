@@ -1,8 +1,9 @@
-VER="1.5.6"
+# bump: libpipeline-version /LIBPIPELINE_VERSION="(.*)"/ https://download.savannah.nongnu.org/releases/libpipeline/|re:/libpipeline-([\d.]+).tar.gz/$1/|semver:*
+LIBPIPELINE_VERSION="1.5.6"
 
-export ZOPEN_TARBALL_URL="https://download.savannah.nongnu.org/releases/libpipeline/libpipeline-"${VER}".tar.gz"
-export ZOPEN_TARBALL_DEPS="git make curl zoslib"
-export ZOPEN_TYPE="TARBALL"
+export ZOPEN_BUILD_LINE="STABLE"
+export ZOPEN_STABLE_URL="https://download.savannah.nongnu.org/releases/libpipeline/libpipeline-${LIBPIPELINE_VERSION}.tar.gz"
+export ZOPEN_STABLE_DEPS="git make curl zoslib"
 export ZOPEN_BOOTSTRAP="skip"
 
 export ZOPEN_CHECK="../tests/chkpipe.sh"
@@ -42,7 +43,8 @@ zopen_post_install()
 {
    cd "$1/lib" && ar -d libpipeline.a libgnu_la-reallocarray.o
 }
+
 zopen_get_version()
 {
-  echo ${VER}
+  echo ${LIBPIPELINE_VERSION}
 }
