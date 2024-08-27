@@ -1,5 +1,5 @@
 # bump: libpipeline-version /LIBPIPELINE_VERSION="(.*)"/ https://download.savannah.nongnu.org/releases/libpipeline/|re:/libpipeline-([\d.]+).tar.gz/$1/|semver:*
-LIBPIPELINE_VERSION="1.5.7"
+LIBPIPELINE_VERSION="1.5.8"
 
 export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_STABLE_URL="https://download.savannah.nongnu.org/releases/libpipeline/libpipeline-${LIBPIPELINE_VERSION}.tar.gz"
