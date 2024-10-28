@@ -2,6 +2,7 @@
 LIBPIPELINE_VERSION="1.5.7"
 
 export ZOPEN_BUILD_LINE="STABLE"
+export ZOPEN_CATEGORIES="library"
 export ZOPEN_STABLE_URL="https://download.savannah.nongnu.org/releases/libpipeline/libpipeline-${LIBPIPELINE_VERSION}.tar.gz"
 export ZOPEN_STABLE_DEPS="git make curl zoslib"
 export ZOPEN_BOOTSTRAP="skip"
